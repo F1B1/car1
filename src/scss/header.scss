@@ -1,0 +1,259 @@
+
+.header{
+	background-color: $gray;
+	position: relative;
+	&__content {
+		display: flex;
+		justify-content:space-between;
+		align-items: center;
+		z-index: 4;
+		position: relative;
+		max-width: 81.25rem;
+		box-sizing: content-box;
+		margin: 0 auto;
+		padding: 0 0.9375rem;
+		@media (max-width:$mobile){
+			  flex-direction: column;
+			  padding: 10px 0px 30px 0px;
+		}
+	}
+	&__decor{
+		min-height: 93px;
+		z-index: 3;
+		position: absolute;
+		left: 0;
+		bottom: 100%;
+		top: 63px;;
+		right:0;
+		@media (max-width:$mobile){
+			height: 200px;
+		}
+	}
+	&__addvert{
+		background-color: $hd-t;
+		padding: 20px 0px;
+		text-align: center;
+	}
+	&__property{
+		background-color: #393A3A;
+	}
+}
+.link{
+	color: #fff;
+	font-size: rem(20);
+	line-height: math.div(24 ,20 );
+	border: 1px solid #fff;
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	border-radius: 20px;
+	padding: 13px 20px;
+	white-space: nowrap;
+	background-color: #4E5255;
+	z-index: 2;
+	@media (min-width:$mobile){
+		flex:  0 1 240px;
+	}
+}
+.decor{
+		&__image{
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 295px;
+		img{
+			height: 100%;
+			object-fit: cover;
+		}
+		@media (max-width:$tablet){
+			 display: none; 
+		}
+	}
+}
+.addvert__text{
+	font-size: rem(20);
+	line-height: math.div(24 ,20 );
+	color: #fff;
+}
+.content{
+	&__link {
+		margin: 20px 0;
+	}
+	&__socials {
+		display: flex;
+		justify-content:center;
+		align-items: center;
+		@media (min-width:$mobile){
+			 padding: 0px 40px 0px 0px; 
+		}
+		@media (min-width:$tablet){
+			margin-left: 30px; 
+	  }
+	}
+	&__social {
+		width:36px ;
+		height: 36px;
+		&:nth-child(1){
+			margin: 0px 30px 0px 0px;
+		}
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+}
+.content__menu{
+	@media (min-width:$mobile){
+		flex: 0 1 350px;  
+	}
+}
+.menu {
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		@media (max-width:$pc){
+			 justify-content: space-evenly; 
+		}
+	}
+	&__item {
+		@media (max-width:$mobile){
+			&:nth-child(1){
+				margin: 0px 30px 20px 0px;
+			}
+		}
+	}
+	&__link {
+		color: #fff;
+		font-size: rem(20);
+	}
+}
+.property {
+	&__search {
+		@include adaptiveValue("padding-top",70 ,25,1 );
+		@include adaptiveValue("padding-bottom",100 ,40,1 );
+	}
+}
+.search {
+		&__container {
+			align-items:center;
+			display: grid;
+			grid-template:100px / 2fr 2fr 1fr ;
+			grid-template-areas: "logo search cart";
+			@media (max-width:$tablet){
+				grid-template:100px / 1fr 2fr 1fr ;
+				grid-template-areas: "logo search cart";
+			}
+			@media (max-width:$mobile){
+				grid-template-areas: 
+				"search search"
+				"logo cart"
+				;
+				grid-template-columns: 1fr 200px;
+			}
+		}
+		&__logo {
+			grid-area: logo;
+			width: 160px;
+			@include adaptiveValue("margin-right",120 ,30,1 );
+			@media (max-width:$tablet){
+				 @include adaptiveValue("width",100 ,70,1 );
+			}
+			img{
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+}
+.form{
+	width: 100%;
+}
+.form-item{
+	max-width: 360px;
+	display: flex;
+	align-items:center;
+	position: relative;
+	@media (max-width:$mobile){
+		 max-width: 100%; 
+	}
+}
+.search-form {
+	grid-area: search;
+	&__item {
+		@media (max-width:$mobile){
+			 margin: 20px 0px 0px 0px;
+		}
+	}
+	&__input {
+		padding: 0px 50px 0px 10px;
+	}
+	&__button {
+		position: absolute;
+		width: 42px;
+		height: 45px;
+		cursor: pointer;
+		border-top-right-radius: 20px;
+		border-bottom-right-radius: 20px;
+		background-color: $blue;
+		right: 0;
+		&::before{
+			content:'';
+			background-image: url('../img/icons/seacrh.png');
+			padding: 0px 0px 0px 25px;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+	}
+}
+.input{
+	width: 100%;
+	height: 45px;
+	border-radius: 20px;
+	outline: none;
+}
+.cart {
+	grid-area: cart;
+	&__body {
+		background-color: $main;
+		padding: 12px 36px;
+		border-radius: 20px;
+		width: 240px;
+		margin: 0px 0px 0px 20px;
+		@media (max-width:$mobile){
+			margin: 0px 0px 0px 0px; 
+			padding: 10px 14px;
+			border-radius: 20px;
+			width: 200px;
+	  }
+	}
+	&__image{
+		width: 20px;
+		height: 20px;
+	}
+	&__link {
+		display: flex;
+		align-items:center;
+		justify-content: space-between;
+		&::after{
+			content:'';
+			display: inline-flex;
+			border-top: 8px solid #999;
+			border-left: 8px solid transparent;
+			border-right: 8px solid transparent;
+			transition: transform 0.4s ease 0s;
+		}
+	}
+	&__text {
+		color: #fff;
+		
+	}
+	&__count {
+		color: #fff;
+		background-color: $blue;
+		padding: 5px 8px;
+		border-radius: 50%;
+	}
+}

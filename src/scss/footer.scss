@@ -1,0 +1,73 @@
+.footer {
+	background-color: #2B2B2B;
+	&__container {}
+	&__body {
+		display: flex;
+		@include adaptiveValue("margin-top",80 ,40,1 );
+		@include adaptiveValue("margin-bottom", 80,15,1 );
+		@media (max-width:$tablet){
+			flex-wrap: wrap;
+		}
+	}
+	&__contact {
+		flex: 0 1 50%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		@media (max-width:$tablet){
+			flex: 0 1 100%;
+			align-items:center;
+			padding: 0px 0px 50px 0px;
+		}
+	}
+	&__title {
+		font-weight: 600;
+		font-family: 'Open Sans';
+		font-size: 18px;
+		color: $blue;
+		padding: 0px 0px 15px 0px;
+	}
+	&__address {
+		background-image: url('../img/icons/map.png');
+		background-size: 19px;
+		background-repeat: no-repeat;
+		display: flex;
+		align-items:center;
+	}
+	&__info {
+		position: relative;
+		padding: 10px 0px 15px 30px;
+		color: #777;
+		@include adaptiveValue("font-size",16 ,14,1 );
+		span{
+			color: #fff;
+		}
+	}
+	&__email {
+		background-image: url('../img/icons/mess.png');
+		background-size: 19px;
+		background-repeat: no-repeat;
+		display: flex;
+		align-items:center;
+		padding: 0px 0px 15px 30px;
+	}
+	&__inst {
+		background-image: url('../img/icons/inst.png');
+		background-size: 26px;
+		background-repeat: no-repeat;
+		display: flex;
+		align-items:center;
+		padding: 5px 0px 15px 30px;
+	}
+	&__map {
+		flex: 0 1 40%;
+		height: 300px;
+		iframe{
+			width: 100%;
+		}
+		@media (max-width:$mobile){
+			 flex: 0 1 100%; 
+		}
+	}
+}
+
